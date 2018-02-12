@@ -23,9 +23,8 @@ final class OllaJsonExtension extends Extension implements PrependExtensionInter
     public function load(array $configs, ContainerBuilder $container)
     {
         $this->reconfig($configs, $container);
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Operations/config'));
-        $loader->load('collection.xml');
-        $loader->load('subresource.xml');
+        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('json.xml');
     }
     private function reconfig(array $configs, ContainerBuilder $container) {
         $configuration = new Configuration();
